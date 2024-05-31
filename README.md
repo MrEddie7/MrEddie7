@@ -37,7 +37,7 @@
 
 <img align="center" alt"gorillaz" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeB08ZcXAurlQ4dfMm4ZEG--szjCNAtsrPTJ7F5NMOB7hnKq2IFUScxU5H&s=10">
 
-<img align="center" alt"Eminem" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhSF9WYmC0UBhSOlB1ZxR6L3b_ffCAQDyfgehtLl3nX7u2OS-AZOHAFGQ&s=10
+<img align="center" alt"Eminem" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhSF9WYmC0UBhSOlB1ZxR6L3b_ffCAQDyfgehtLl3nX7u2OS-AZOHAFGQ&s=10">
 
 
 
