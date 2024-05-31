@@ -24,18 +24,20 @@
 
 <img align="center" alt="Cowboy Bebop" src="https://img.odcdn.com.br/wp-content/uploads/2021/06/fun-FUN-CBY-JPN_S1-Full-Image_GalleryCover-en-US-1489784785929._UR19201080_RI_-768x432.jpg">
 
-<img align="center" alt="jujutsu kaisen" src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.nintendo.com%2Fpt-br%2Fstore%2Fproducts%2Fjujutsu-kaisen-cursed-clash-switch%2F&psig=AOvVaw061BtA_jPLR_rd6bhv5VMH&ust=1716927650605000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCNCCoJHUroYDFQAAAAAdAAAAABAE">
+<img align="center" alt="jujutsu kaisen" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4HQpAQ1SUcpd_e5MewPKPvQvg6vD7zVFEBg&s">
 
-<img align="center" alt="honor of kings" src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fbr.ign.com%2Fhonor-of-kings&psig=AOvVaw1vSHG_s1OyRF9ceD4XKkGs&ust=1716927729096000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCKDTv7fUroYDFQAAAAAdAAAAABAE">
+<img align="center" alt="honor of kings" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvhzZJJJJyZSDTKygPWmyOxzymKX_33cwWNA&s">
 </div>
 
 ### Esses são bandas artistas e albuns que eu gosto
 
 <div style="display:inline-block">
-<img align="center" alt="plastic bech" src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.amazon.com.br%2FPlastic-Beach-Gorillaz%2Fdp%2FB0032W7CZO&psig=AOvVaw2CiKkQL_Dv_WaIrAfuRY1G&ust=1716927955728000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCPjBkKLVroYDFQAAAAAdAAAAABAE">
-<img align="center" alt"gorillaz" src="https://www.google.com/imgres?q=gorrilaz&imgurl=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FI%2F71M8yXz6o7L._UF1000%2C1000_QL80_.jpg&imgrefurl=https%3A%2F%2Fwww.amazon.com.br%2FDemon-Days-Gorillaz%2Fdp%2FB0018OP7O6&docid=yIkcjHxaX5r2xM&tbnid=qPgf6wMadCHBKM&vet=12ahUKEwj9kanG1a6GAxWipJUCHZaFB8YQM3oECBwQAA..i&w=1000&h=1000&hcb=2&ved=2ahUKEwj9kanG1a6GAxWipJUCHZaFB8YQM3oECBwQAA">
-<img align="center" alt"Eminem" src="https://www.google.com/imgres?q=eminem&imgurl=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FI%2F61jxguiMreL._UF1000%2C1000_QL80_.jpg&imgrefurl=https%3A%2F%2Fwww.amazon.com.br%2FEminem-Show-Disco-Vinil%2Fdp%2FB000066JCX&docid=FAWrIu8ETPAd0M&tbnid=0RRQcKfyT3No5M&vet=12ahUKEwjd87vh1a6GAxVsrZUCHcowCuwQM3oECFIQAA..i&w=1000&h=1000&hcb=2&ved=2ahUKEwjd87vh1a6GAxVsrZUCHcowCuwQM3oECFIQAA">
 
+<img align="center" alt="plastic bech" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyUUi9YwrWcGwnGTDdQak7EhX8v5mggQkaLA&s">
+
+<img align="center" alt"gorillaz" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeB08ZcXAurlQ4dfMm4ZEG--szjCNAtsrPTJ7F5NMOB7hnKq2IFUScxU5H&s=10">
+
+<img align="center" alt"Eminem" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhSF9WYmC0UBhSOlB1ZxR6L3b_ffCAQDyfgehtLl3nX7u2OS-AZOHAFGQ&s=10
 
 
 
