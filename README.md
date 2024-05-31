@@ -1,6 +1,7 @@
 <div style="display: flex; justify-content:center;">
 <img src="https://static.wikia.nocookie.net/herois/images/2/20/527033-527032-hunter_x_hunter_1100880.jpg.webp/revision/latest?cb=20220714000234&path-prefix=pt-br">
-### Olá, meu nome é Eddie
+
+## Olá, meu nome é Eddie
 
 ## Esse são meus Stats no Github
 ![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=MrEddie7&show_icons=true&theme=tokyonight)
