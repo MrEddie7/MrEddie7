@@ -19,9 +19,13 @@
 <img align="center" alt="Java" src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white">
 <img align="center" alt="Linux Mint" src="https://img.shields.io/badge/Linux_Mint-87CF3E?style=for-the-badge&logo=linux-mint&logoColor=white">
 <img align="center" alt="NeoVim com NVChad" src="https://img.shields.io/badge/NeoVim-%2357A143.svg?&style=for-the-badge&logo=neovim&logoColor=white">
+
 <img align="center" alt="Minecraft" src="https://assets.nintendo.com/image/upload/ar_16:9,b_auto:border,c_lpad/b_white/f_auto/q_auto/dpr_1.5/c_scale,w_1200/ncom/software/switch/70010000000964/811461b8d1cacf1f2da791b478dccfe2a55457780364c3d5a95fbfcdd4c3086f">
-<img align="center" alt="Cowboy Bebop" src="https://www.google.com/url?sa=i&url=https%3A%2F%2Folhardigital.com.br%2F2021%2F10%2F13%2Fcinema-e-streaming%2Fcowboy-bebop-anime-netflix%2F&psig=AOvVaw1R2C83TZRVIcAbaaBFmf_L&ust=1716927513715000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCLijsdHTroYDFQAAAAAdAAAAABE">
+
+<img align="center" alt="Cowboy Bebop" src="https://img.odcdn.com.br/wp-content/uploads/2021/06/fun-FUN-CBY-JPN_S1-Full-Image_GalleryCover-en-US-1489784785929._UR19201080_RI_-768x432.jpg">
+
 <img align="center" alt="jujutsu kaisen" src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.nintendo.com%2Fpt-br%2Fstore%2Fproducts%2Fjujutsu-kaisen-cursed-clash-switch%2F&psig=AOvVaw061BtA_jPLR_rd6bhv5VMH&ust=1716927650605000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCNCCoJHUroYDFQAAAAAdAAAAABAE">
+
 <img align="center" alt="honor of kings" src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fbr.ign.com%2Fhonor-of-kings&psig=AOvVaw1vSHG_s1OyRF9ceD4XKkGs&ust=1716927729096000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCKDTv7fUroYDFQAAAAAdAAAAABAE">
 </div>
 
