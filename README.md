@@ -1,5 +1,5 @@
 <div style="display: flex; justify-content:center;">
-<img src="https://pin.it/3G29djvhF">
+<img src="https://static.wikia.nocookie.net/herois/images/2/20/527033-527032-hunter_x_hunter_1100880.jpg.webp/revision/latest?cb=20220714000234&path-prefix=pt-br">
 ### Olá, meu nome é Eddie
 
 ## Esse são meus Stats no Github
