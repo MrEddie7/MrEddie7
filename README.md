@@ -1,5 +1,5 @@
 <div style="display: flex; justify-content:center;">
-<img src="https://static.wikia.nocookie.net/herois/images/2/20/527033-527032-hunter_x_hunter_1100880.jpg.webp/revision/latest?cb=20220714000234&path-prefix=pt-br" widht="200">
+<img src="https://static.wikia.nocookie.net/herois/images/2/20/527033-527032-hunter_x_hunter_1100880.jpg.webp/revision/latest?cb=20220714000234&path-prefix=pt-br" widht="200" align="center">
 
 ## Olá, meu nome é Eddie
 
