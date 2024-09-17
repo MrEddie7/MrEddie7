@@ -1,44 +1,51 @@
-<div style="display: flex; justify-content:center;">
-<img src="https://static.wikia.nocookie.net/herois/images/2/20/527033-527032-hunter_x_hunter_1100880.jpg.webp/revision/latest?cb=20220714000234&path-prefix=pt-br" widht="200" align="center">
+<div style="display: inline-block;">
 
-## Olá, meu nome é Eddie
-
-## Esse são meus Stats no Github
-![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=MrEddie7&show_icons=true&theme=tokyonight)
-![toplangs](https://github-readme-stats.vercel.app/api/top-langs/?username=MrEddie7&theme=tokyonight)
-<hr>
-
-### Esses são os meus jogos e séries e linguagens favoritas
-
-<div style="display:inline-block">
-<img align="center" alt="HTML" src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"> 
-
-<img align="center" alt="CSS" src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white">
-<img align="center" alt="JavaScript" src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
-<img align="center" alt="Python" src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white">
-<img align="center" alt="C" src="https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white">
-<img align="center" alt="Java" src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white">
-<img align="center" alt="Linux Mint" src="https://img.shields.io/badge/Linux_Mint-87CF3E?style=for-the-badge&logo=linux-mint&logoColor=white">
-<img align="center" alt="NeoVim com NVChad" src="https://img.shields.io/badge/NeoVim-%2357A143.svg?&style=for-the-badge&logo=neovim&logoColor=white">
-
-<img align="center" alt="Minecraft" src="https://assets.nintendo.com/image/upload/ar_16:9,b_auto:border,c_lpad/b_white/f_auto/q_auto/dpr_1.5/c_scale,w_1200/ncom/software/switch/70010000000964/811461b8d1cacf1f2da791b478dccfe2a55457780364c3d5a95fbfcdd4c3086f">
-
-<img align="center" alt="Cowboy Bebop" src="https://img.odcdn.com.br/wp-content/uploads/2021/06/fun-FUN-CBY-JPN_S1-Full-Image_GalleryCover-en-US-1489784785929._UR19201080_RI_-768x432.jpg">
-
-<img align="center" alt="jujutsu kaisen" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4HQpAQ1SUcpd_e5MewPKPvQvg6vD7zVFEBg&s">
-
-<img align="center" alt="honor of kings" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvhzZJJJJyZSDTKygPWmyOxzymKX_33cwWNA&s">
+<br>
+<img align="left" src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=22&pause=1000&color=FF3131&left=true&left=true&random=false&width=500&lines=Hello+my+name+is+Eduardo!;I+am+16+years+old;Bem+vindo+ao+meu+perfil" alt="Typing SVG"/>
+<br>
+<img align="left" src="https://github-readme-stats.vercel.app/api/top-langs/?username=MrEddie7&layout=compact&hide_border=false&bg_color=0d1117&icon_color=7203F7FF&text_color=FFFFFF&title_color=FF3131"/>
+<img align="right" src="https://github-readme-stats.vercel.app/api?username=MrEddie7&show_icons=true&layout=compact&hide_border=false&bg_color=0d1117&icon_color=FF3131&text_color=FFFFFF&title_color=FF3131"/>
+<br>
+LEARNING AT THE MOMENT:
 </div>
+<br>
+<div>
+<img align="center" alt="java" src="https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white"/>
+<img align="center" alt="HTML5" src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white"/>
+<img align="center" alt="CSS3" src="https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white"/>
+<img align="center" alt="python" src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54"/>
+<img align="center" alt="Javascript" src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E"/>
+</div>
+<br>
+<div>
+IDEs:
+</div>
+<div style="display: inline-block;">
+<br>
+<img align="center" alt="VsCode" src="https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white"/>
+<img align="center" alt="Eclipse" src="[https://img.shields.io/badge/Eclipse-FE7A16.svg?style=for-the-badge&logo=Eclipse&logoColor=white](https://static.wixstatic.com/media/0d6674_b39c8ddaafbd4b8dbb459a4221ee8227~mv2.png/v1/fill/w_542,h_545,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Frame%2010000017556.png)"/>
+<img align="center" alt="NetBeans" src="https://img.shields.io/badge/NetBeansIDE-1B6AC6.svg?style=for-the-badge&logo=apache-netbeans-ide&logoColor=white"/>
+<img align="center" alt="Figma" src="https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white"/>
+</div>
+</div>
+<br>
 
-### Esses são bandas artistas e albuns que eu gosto
 
-<div style="display:inline-block">
 
-<img align="center" alt="plastic bech" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyUUi9YwrWcGwnGTDdQak7EhX8v5mggQkaLA&s">
+</div>
+</div>
+<hr> 
+<div>
 
-<img align="center" alt="gorillaz" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeB08ZcXAurlQ4dfMm4ZEG--szjCNAtsrPTJ7F5NMOB7hnKq2IFUScxU5H&s=10">
+<div align="center">
+<img alt="snake eating my contributions" src="https://raw.githubusercontent.com/HakkaiDP/HakkaiDP/output/github-contribution-grid-snake.svg"/>
+</div>
+<hr> 
+<div>
 
-<img align="center" alt="Eminem" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhSF9WYmC0UBhSOlB1ZxR6L3b_ffCAQDyfgehtLl3nX7u2OS-AZOHAFGQ&s=10">
+<img align="center" src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=22&pause=1000&color=FF3131&center=true&center=true&random=false&width=500&lines=Thanks+for+the+attention!!! :)" alt="Typing SVG">
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&height=100&color=FF3131&section=footer">
+</div>
 
 
 
