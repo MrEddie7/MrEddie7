@@ -1,9 +1,10 @@
-<div style="display: inline-block;">
+<div style="display: grid;">
 
 <br>
 <img align="left" src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=22&pause=1000&color=FF3131&left=true&left=true&random=false&width=500&lines=Hello+my+name+is+Eduardo!;I+am+16+years+old;Bem+vindo+ao+meu+perfil" alt="Typing SVG"/>
 <br>
-<img align="left" src="https://github-readme-stats.vercel.app/api/top-langs/?username=MrEddie7&layout=compact&hide_border=false&bg_color=0d1117&icon_color=7203F7FF&text_color=FFFFFF&title_color=FF3131"/>
+
+<img  align="left" src="https://github-readme-stats.vercel.app/api/top-langs/?username=MrEddie7&layout=compact&hide_border=false&bg_color=0d1117&icon_color=7203F7FF&text_color=FFFFFF&title_color=FF3131"/>
 <img align="right" src="https://github-readme-stats.vercel.app/api?username=MrEddie7&show_icons=true&layout=compact&hide_border=false&bg_color=0d1117&icon_color=FF3131&text_color=FFFFFF&title_color=FF3131"/>
 <br>
 LEARNING AT THE MOMENT:
@@ -23,7 +24,7 @@ IDEs:
 <div style="display: inline-block;">
 <br>
 <img align="center" alt="VsCode" src="https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white"/>
-<img align="center" alt="Eclipse" src="[https://img.shields.io/badge/Eclipse-FE7A16.svg?style=for-the-badge&logo=Eclipse&logoColor=white](https://static.wixstatic.com/media/0d6674_b39c8ddaafbd4b8dbb459a4221ee8227~mv2.png/v1/fill/w_542,h_545,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Frame%2010000017556.png)"/>
+<img align="center" alt="Eclipse" src="https://img.shields.io/badge/Eclipse-FE7A16.svg?style=for-the-badge&logo=Eclipse&logoColor=white"/>
 <img align="center" alt="NetBeans" src="https://img.shields.io/badge/NetBeansIDE-1B6AC6.svg?style=for-the-badge&logo=apache-netbeans-ide&logoColor=white"/>
 <img align="center" alt="Figma" src="https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white"/>
 </div>
