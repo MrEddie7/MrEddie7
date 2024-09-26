@@ -1,4 +1,4 @@
-<https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=22&pause=1000&color=FF3131&left=true&left=true&random=false&width=500&lines=Hello+my+name+is+Eduardo!;I+am+16+years+old;Bem+vindo+ao+meu+perfil>
+<img align=center src=" https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=22&pause=1000&color=FF3131&left=true&left=true&random=false&width=500&lines=Hello+my+name+is+Eduardo!;I+am+16+years+old;Bem+vindo+ao+meu+perfil" alt="Typing SVG"/>
 
 ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=MrEddie7&layout=compact&hide_border=false&bg_color=0d1117&icon_color=7203F7FF&text_color=FFFFFF&title_color=FF3131)
 ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=MrEddie7&show_icons=true&layout=compact&hide_border=false&bg_color=0d1117&icon_color=FF3131&text_color=FFFFFF&title_color=FF3131)
