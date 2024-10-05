@@ -28,6 +28,7 @@
 
 ---
 
-![Thanks for the attention!!! :)](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=22&pause=1000&color=FF3131&center=true&center=true&random=false&width=500&lines=Thanks+for+the+attention+:+))
+![Thanks for the attention!!! :)](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=22&pause=1000&color=FF3131&center=true&center=true&random=false&width=500&lines=Thanks+for+the+attention;I+will+update+more+later
+)
 
 ![Footer](https://capsule-render.vercel.app/api?type=waving&height=100&color=FF3131&section=footer)
