@@ -1,5 +1,6 @@
 ![Hello my name is Eduardo!; I am 16 years old; Bem vindo ao meu perfil](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=22&pause=1000&color=FF3131&left=true&left=true&random=false&width=500&lines=Hello+my+name+is+Eduardo!;I+am+16+years+old;Bem+vindo+ao+meu+perfil)
 
+![PC](https://art.pixilart.com/ac873af3fe9cf63.png)
 
 
 ## LEARNING AT THE MOMENT:
