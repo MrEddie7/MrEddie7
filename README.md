@@ -28,7 +28,7 @@
 
 ---
 
-![SVG](https://art.pixilart.com/original/sr2f124d776d3aws3.gif)
+![Footer](https://art.pixilart.com/original/sr2f124d776d3aws3.gif)
 
 ![Thanks for the attention!!! :)](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=22&pause=1000&color=FF3131&center=true&center=true&random=false&width=500&lines=Thanks+for+the+attention;I+will+update+more+later
 )
