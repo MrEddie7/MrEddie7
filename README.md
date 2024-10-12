@@ -1,3 +1,5 @@
+<div align="center">
+
 ![Hello my name is Eduardo!; I am 16 years old; Bem vindo ao meu perfil](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=22&pause=1000&color=FF3131&left=true&left=true&random=false&width=500&lines=Hello+my+name+is+Eduardo!;I+am+16+years+old;Bem+vindo+ao+meu+perfil)
 
 ![PC](https://art.pixilart.com/ac873af3fe9cf63.png)
@@ -30,9 +32,10 @@
 ---
 
 ![Footer
-](https://readme-typing-svg.demolab.com?center=true&center=true=art.pixilart.com/original/sr2f124d776d3aws3.gif)
+](https://art.pixilart.com/original/sr2f124d776d3aws3.gif)
 
 ![Thanks for the attention!!! :)](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=22&pause=1000&color=FF3131&center=true&center=true&random=false&width=500&lines=Thanks+for+the+attention;I+will+update+more+later
 )
 
 ![Footer](https://capsule-render.vercel.app/api?type=waving&height=100&color=FF3131&section=footer)
+</div>
