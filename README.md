@@ -32,6 +32,7 @@
 <div align="center">
 <img src="https://art.pixilart.com/original/sr2cb9ec0d617aws3.gif" alt="gif" width="300"/>
 </div>
+
 ![Thanks for the attention!!! :)](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=22&pause=1000&color=FF3131&center=true&center=true&random=false&width=500&lines=Thanks+for+the+attention;I+will+update+more+later
 )
 
