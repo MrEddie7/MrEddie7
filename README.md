@@ -1,6 +1,6 @@
 
 
-![Hello my name is Eduardo!; I am 16 years old; Bem vindo ao meu perfil](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=22&pause=1000&color=9c7509&center=true&left=true&random=false&width=500&lines=Hello+my+name+is+Eduardo!;I+am+16+years+old;Bem+vindo+ao+meu+perfil)
+![Hello my name is Eduardo!; I am 16 years old; Bem vindo ao meu perfil](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=22&pause=1000&color=091f9c&center=true&left=true&random=false&width=500&lines=Hello+my+name+is+Eduardo!;I+am+16+years+old;Bem+vindo+ao+meu+perfil)
 
 <div align="center" >
 
@@ -11,7 +11,7 @@
 </div>
 <div align="right" >
 
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=MrEddie7&layout=compact&hide_border=false&bg_color=0d1117&icon_color=7203F7FF&text_color=FFFFFF&title_color=9c7509)
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=MrEddie7&layout=compact&hide_border=false&bg_color=0d1117&icon_color=7203F7FF&text_color=FFFFFF&title_color=091f9c)
 
 ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
@@ -37,7 +37,7 @@
 
 </div>
 
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=MrEddie7&show_icons=true&layout=compact&hide_border=false&bg_color=0d1117&icon_color=FF3131&text_color=FFFFFF&title_color=#9c7509)
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=MrEddie7&show_icons=true&layout=compact&hide_border=false&bg_color=0d1117&icon_color=FF3131&text_color=FFFFFF&title_color=#091f9c)
 ---
 
 ![snake eating my contributions](https://raw.githubusercontent.com/HakkaiDP/HakkaiDP/output/github-contribution-grid-snake.svg)
