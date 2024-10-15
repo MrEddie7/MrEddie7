@@ -1,6 +1,6 @@
 
 
-![Hello my name is Eduardo!; I am 16 years old; Bem vindo ao meu perfil](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=22&pause=1000&color=FF3131&center=true&left=true&random=false&width=500&lines=Hello+my+name+is+Eduardo!;I+am+16+years+old;Bem+vindo+ao+meu+perfil)
+![Hello my name is Eduardo!; I am 16 years old; Bem vindo ao meu perfil](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=22&pause=1000&color=#9c7509&center=true&left=true&random=false&width=500&lines=Hello+my+name+is+Eduardo!;I+am+16+years+old;Bem+vindo+ao+meu+perfil)
 
 <div align="center" >
 
@@ -37,7 +37,7 @@
 
 </div>
 
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=MrEddie7&show_icons=true&layout=compact&hide_border=false&bg_color=0d1117&icon_color=FF3131&text_color=FFFFFF&title_color=FF3131)
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=MrEddie7&show_icons=true&layout=compact&hide_border=false&bg_color=0d1117&icon_color=FF3131&text_color=FFFFFF&title_color=#9c7509)
 ---
 
 ![snake eating my contributions](https://raw.githubusercontent.com/HakkaiDP/HakkaiDP/output/github-contribution-grid-snake.svg)
