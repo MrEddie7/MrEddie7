@@ -1,4 +1,4 @@
-![carro]([https://art.pixilart.com/157fb6d722be96c.gif](https://art.pixilart.com/512fa894c9ec613.gif))
+![https://art.pixilart.com/512fa894c9ec613.gif](https://art.pixilart.com/512fa894c9ec613.gif)
 
 ![Hello my name is Eduardo!; I am 16 years old; Bem vindo ao meu perfil](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=22&pause=1000&color=091f9c&center=true&left=true&random=false&width=500&lines=Hello+my+name+is+Eduardo!;I+am+16+years+old;Bem+vindo+ao+meu+perfil)
 
