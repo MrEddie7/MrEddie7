@@ -1,4 +1,4 @@
-
+![carro](https://art.pixilart.com/157fb6d722be96c.gif)
 
 ![Hello my name is Eduardo!; I am 16 years old; Bem vindo ao meu perfil](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=22&pause=1000&color=091f9c&center=true&left=true&random=false&width=500&lines=Hello+my+name+is+Eduardo!;I+am+16+years+old;Bem+vindo+ao+meu+perfil)
 
@@ -43,10 +43,6 @@
 ![snake eating my contributions](https://raw.githubusercontent.com/HakkaiDP/HakkaiDP/output/github-contribution-grid-snake.svg)
 
 ---
-<div align="center">
-<img src="https://art.pixilart.com/original/sr2cb9ec0d617aws3.gif" alt="gif" width="300"/>
-</div>
-
 ![Thanks for the attention!!! :)](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=22&pause=1000&color=233bc4&center=true&center=true&random=false&width=500&lines=Thanks+for+the+attention;I+will+update+more+later
 )
 
