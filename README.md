@@ -37,7 +37,7 @@
 
 </div>
 
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=MrEddie7&show_icons=true&layout=compact&hide_border=false&bg_color=0d1117&icon_color=939ba3&text_color=FFFFFF&title_color=233bc4)
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=MrEddie7&show_icons=true&layout=compact&hide_border=false&bg_color=0d1117&icon_color=939ba3&text_color=FFFFFF&title_color=939ba3)
 ---
 
 ![snake eating my contributions](https://raw.githubusercontent.com/HakkaiDP/HakkaiDP/output/github-contribution-grid-snake.svg)
