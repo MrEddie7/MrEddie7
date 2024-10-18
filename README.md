@@ -6,7 +6,7 @@
 
 ---
 
-## LEARNING AT THE MOMENT:
+## LEARNING AT THE MOMENT::
 
 </div>
 <div align="right" >
