@@ -15,16 +15,15 @@
 
 
 ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=MrEddie7&layout=compact&hide_border=false&bg_color=0d1117&icon_color=7203F7FF&text_color=FFFFFF&title_color=939ba3)
-</div>
 
-<div align="right" >
+
+
   
 ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 
-</div>
 
 ---
 
@@ -35,6 +34,7 @@
 ![NetBeans](https://img.shields.io/badge/NetBeansIDE-1B6AC6.svg?style=for-the-badge&logo=apache-netbeans-ide&logoColor=white)
 ![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)
 
+
 ---
 
 <div align="center" >
@@ -44,7 +44,7 @@
 </div>
 
 ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=MrEddie7&show_icons=true&layout=compact&hide_border=false&bg_color=0d1117&icon_color=939ba3&text_color=FFFFFF&title_color=939ba3)
-
+</div>
 ---
 
 ![snake eating my contributions](https://raw.githubusercontent.com/HakkaiDP/HakkaiDP/output/github-contribution-grid-snake.svg)
