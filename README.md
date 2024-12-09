@@ -3,7 +3,7 @@
 
 ![https://art.pixilart.com/512fa894c9ec613.gif](https://art.pixilart.com/b389900b79b656a.gif)
 
-![Hello my name is Eduardo!; I am 16 years old; Bem vindo ao meu perfil](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=22&pause=1000&color=939ba3&center=true&left=true&random=false&width=500&lines=Hello+my+name+is+Eduardo!;I+am+16+years+old;Welcom+to+my+profile)
+![Hello my name is Eduardo!; I am 16 years old; Bem vindo ao meu perfil](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=22&pause=1000&color=939ba3&center=true&center=true&random=false&width=500&lines=Hello+my+name+is+Eduardo!;I+am+16+years+old;Welcom+to+my+profile)
 
 <div align="center" >
 
@@ -37,11 +37,7 @@
 
 ---
 
-<div align="center" >
-
 ## Status:
-
-</div>
 
 ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=MrEddie7&show_icons=true&layout=compact&hide_border=false&bg_color=0d1117&icon_color=939ba3&text_color=FFFFFF&title_color=939ba3)
 </div>
