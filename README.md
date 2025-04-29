@@ -23,6 +23,7 @@
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![kotlin](https://camo.githubusercontent.com/86d63b792a4ba6ebcb348835ace6f25f92915c78dc21ccd2f52b78077958649f/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6b6f746c696e2d3862336562322e7376673f7374796c653d666f722d7468652d6261646765266c6f676f3d6b6f746c696e266c6f676f436f6c6f723d7768697465)
 
 
 ---
