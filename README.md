@@ -19,6 +19,7 @@
 
 
 ![PHP](https://camo.githubusercontent.com/f82982d97ad338d9015cca8a51dc66dcdb69d522aa6152cdbc4b649f99146621/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f7068702d3861326265322e7376673f7374796c653d666f722d7468652d6261646765266c6f676f3d706870266c6f676f436f6c6f723d7768697465)
+![SQL](https://camo.githubusercontent.com/2839af30b2c340bd3d6c49267317874f7af88ff7d16636a66775ff1c6af12413/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4d7953514c2d3030303030302e7376673f7374796c653d666f722d7468652d6261646765266c6f676f3d4d7953514c266c6f676f436f6c6f723d303046463030)
 ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
