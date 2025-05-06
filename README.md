@@ -3,9 +3,12 @@
 
 ![https://art.pixilart.com/512fa894c9ec613.gif](https://art.pixilart.com/b389900b79b656a.gif)
 
-![Hello my name is Eduardo!; I am 16 years old; Bem vindo ao meu perfil](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=22&pause=1000&color=939ba3&center=true&center=true&random=false&width=500&lines=Hello+my+name+is+Eduardo!;I+am+16+years+old;Welcom+to+my+profile)
 
 <div align="center" >
+  
+![Hello my name is Eduardo!; I am 16 years old; Bem vindo ao meu perfil](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=22&pause=1000&color=939ba3&center=true&center=true&random=false&width=500&lines=Hello+my+name+is+Eduardo!;I+am+16+years+old;Welcom+to+my+profile)
+
+
 
 ---
 
@@ -49,6 +52,7 @@
 ![snake eating my contributions](https://raw.githubusercontent.com/HakkaiDP/HakkaiDP/output/github-contribution-grid-snake.svg)
 
 ---
+<div align="center">
 ![Thanks for the attention!!! :)](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=22&pause=1000&color=939ba3&center=true&center=true&random=false&width=500&lines=Thanks+for+the+attention;I+will+update+more+later
 )
 
