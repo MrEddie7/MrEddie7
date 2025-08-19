@@ -34,10 +34,10 @@
 
 ## IDEs:
 
-![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
-![Eclipse](https://img.shields.io/badge/Eclipse-FE7A16.svg?style=for-the-badge&logo=Eclipse&logoColor=white)
-![NetBeans](https://img.shields.io/badge/NetBeansIDE-1B6AC6.svg?style=for-the-badge&logo=apache-netbeans-ide&logoColor=white)
-![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)
+![Visual Studio Code](https://camo.githubusercontent.com/0b36c8f326a071e5466b2a4ba81cba1ca122c3141b42b4940d61213c933333d5/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f5653253230436f64652d626c61636b3f7374796c653d666f722d7468652d6261646765266c6f676f3d76697375616c73747564696f636f6465)
+![NetBeans](https://camo.githubusercontent.com/760a63e96ed08af20c224d65529e25e86eb7031d873fad187360d442cead88d5/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4e65744265616e732d626c61636b3f7374796c653d666f722d7468652d6261646765266c6f676f3d6170616368652532306e65746265616e73253230696465266c6f676f436f6c6f723d7768697465)
+![Figma](https://camo.githubusercontent.com/23f4d1ae187663333793f75cb53c668b0c6a3216b6c2dd3e92989fa577fe2c20/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4669676d612d626c61636b3f7374796c653d666f722d7468652d6261646765266c6f676f3d6669676d61)
+
 
 
 ---
