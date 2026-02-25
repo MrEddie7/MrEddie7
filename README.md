@@ -44,7 +44,7 @@
 
 ## Status:
 
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=MrEddie7&show_icons=true&layout=compact&hide_border=false&bg_color=0d1117&icon_color=939ba3&text_color=FFFFFF&title_color=939ba3)
+![GitHub Stats](https://mr-eddie7.vercel.app/api?username=mreedie7&show_icons=true&layout=compact&hide_border=false&bg_color=0d1117&icon_color=939ba3&text_color=FFFFFF&title_color=939ba3)
 </div>
 
 ---
