@@ -4,6 +4,7 @@
 
 ![Hello my name is Eduardo!](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=22&pause=1000&color=939ba3&center=true&width=500&lines=Hello+my+name+is+Eduardo!;Here+is+18+years+old;Welcome+to+me+Profile!)
 
+![GIF](https://camo.githubusercontent.com/70cb07c29b9ddaa3fdc8a35e491f94997a1f2af698ae20de742d36e2c1e55de2/68747470733a2f2f6172742e706978696c6172742e636f6d2f6233383939303062373962363536612e676966).
 </div>
 
 ---
