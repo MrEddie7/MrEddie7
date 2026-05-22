@@ -1,1 +1,113 @@
 
+name: Gerar Gráfico de Linguagens
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * 0'  # Executa toda semana
+
+jobs:
+  generate-graph:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Buscar Linguagens do Repositório
+        id: languages
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { data } = await github.rest.repos.listLanguages({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+            });
+            
+            console.log('Linguagens encontradas:', data);
+            core.setOutput('languages', JSON.stringify(data));
+      
+      - name: Gerar Gráfico em SVG
+        id: generate
+        run: |
+          python3 << 'EOF'
+          import json
+          import math
+          
+          languages_data = json.loads('${{ steps.languages.outputs.languages }}')
+          
+          if not languages_data:
+            languages_data = {"No languages detected": 100}
+          
+          total = sum(languages_data.values())
+          
+          # Cores para cada linguagem
+          colors = [
+            "#FF6B6B", "#4ECDC4", "#45B7D1", "#FFA07A", "#98D8C8",
+            "#F7DC6F", "#BB8FCE", "#85C1E2", "#F8B88B", "#A8D5BA"
+          ]
+          
+          svg = f'''<svg width="800" height="500" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <style>
+                .title {{ font-size: 28px; font-weight: bold; }}
+                .label {{ font-size: 14px; fill: white; font-weight: bold; }}
+                .percent {{ font-size: 12px; fill: white; }}
+                .legend-text {{ font-size: 12px; }}
+              </style>
+            </defs>
+            
+            <!-- Background -->
+            <rect width="800" height="500" fill="#1e1e1e"/>
+            
+            <!-- Título -->
+            <text x="400" y="40" text-anchor="middle" class="title" fill="white">
+              Linguagens do Repositório
+            </text>
+            
+            <!-- Gráfico de Barras -->
+            <g id="bars">
+          '''
+          
+          y_pos = 80
+          bar_height = 30
+          bar_spacing = 10
+          
+          for idx, (lang, bytes_count) in enumerate(sorted(languages_data.items(), key=lambda x: x[1], reverse=True)):
+            percentage = (bytes_count / total) * 100
+            bar_width = (percentage / 100) * 600
+            color = colors[idx % len(colors)]
+            
+            svg += f'''
+              <!-- {lang} -->
+              <rect x="100" y="{y_pos}" width="{bar_width}" height="{bar_height}" fill="{color}" rx="5"/>
+              <text x="110" y="{y_pos + 20}" class="label">{lang}: {percentage:.1f}%</text>
+            '''
+            
+            y_pos += bar_height + bar_spacing
+          
+          svg += '''
+            </g>
+            
+            <!-- Rodapé -->
+            <text x="400" y="480" text-anchor="middle" class="legend-text" fill="#888">
+              Gerado automaticamente por GitHub Actions
+            </text>
+          </svg>
+          '''
+          
+          with open('languages-graph.svg', 'w', encoding='utf-8') as f:
+            f.write(svg)
+          
+          print("Gráfico gerado com sucesso!")
+          EOF
+      
+      - name: Commit e Push do Gráfico
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add languages-graph.svg
+          git commit -m "chore: atualizar gráfico de linguagens" || echo "Nada para fazer commit"
+          git push || echo "Nada para fazer push"
