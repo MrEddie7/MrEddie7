@@ -2,7 +2,7 @@
   
 ![Header](https://capsule-render.vercel.app/api?type=waving&height=120&color=939ba3&section=header)
 
-![Hello my name is Eduardo!](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=22&pause=1000&color=939ba3&center=true&width=500&lines=Hello+my+name+is+Eduardo!;Tech+Explorer+%26+Developer;Welcome+to+my+profile)
+![Hello my name is Eduardo!](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=22&pause=1000&color=939ba3&center=true&width=500&lines=Hello+my+name+is+Eduardo!;Here+is+18+years+old;Welcome+to+me+Profile!)
 
 </div>
 
@@ -11,8 +11,6 @@
 ##  LEARNING AT THE MOMENT
 
 <div align="center">
-
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=MrEddie7&layout=compact&hide_border=false&bg_color=0d1117&icon_color=7203F7FF&text_color=FFFFFF&title_color=939ba3)
 
 <br/>
 
@@ -38,6 +36,11 @@
 ![VS Code](https://img.shields.io/badge/VS%20Code-black?style=for-the-badge&logo=visualstudiocode)
 ![NetBeans](https://img.shields.io/badge/NetBeans-black?style=for-the-badge&logo=apache-netbeans-ide&logoColor=white)
 ![Figma](https://img.shields.io/badge/Figma-black?style=for-the-badge&logo=figma)
+![PhpStorm](https://img.shields.io/badge/PhpStorm-000000?style=for-the-badge&logo=phpstorm&logoColor=purple)
+
+![IntelliJ IDEA](https://img.shields.io/badge/IntelliJ%20IDEA-000000?style=for-the-badge&logo=intellijidea&logoColor=purple)
+
+![Android Studio](https://img.shields.io/badge/Android%20Studio-000000?style=for-the-badge&logo=androidstudio&logoColor=3DDC84)
 
 </div>
 
@@ -47,11 +50,12 @@
 
 <div align="center">
 
-![GitHub Stats](https://mr-eddie7.vercel.app/api?username=MrEddie7&show_icons=true&layout=compact&hide_border=false&bg_color=0d1117&icon_color=939ba3&text_color=FFFFFF&title_color=939ba3)
+![Profile Details](https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=MrEddie7&theme=github_dark)
+
 
 <br/>
 
-![snake eating my contributions](https://raw.githubusercontent.com/HakkaiDP/HakkaiDP/output/github-contribution-grid-snake.svg)
+![snake eating my contributions](https://raw.githubusercontent.com/MrEddie7/MrEddie7/output/github-contribution-grid-snake.svg)
 ---
 
 ![Thanks for the attention!](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=22&pause=1000&color=939ba3&center=true&width=500&lines=Thanks+for+the+attention!;I+will+update+more+later...)
