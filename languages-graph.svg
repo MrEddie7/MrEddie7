@@ -1,0 +1,32 @@
+<svg width="800" height="500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .title { font-size: 28px; font-weight: bold; }
+      .label { font-size: 14px; fill: white; font-weight: bold; }
+      .percent { font-size: 12px; fill: white; }
+      .legend-text { font-size: 12px; }
+    </style>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="500" fill="#1e1e1e"/>
+  
+  <!-- Título -->
+  <text x="400" y="40" text-anchor="middle" class="title" fill="white">
+    Linguagens do Repositório
+  </text>
+  
+  <!-- Gráfico de Barras -->
+  <g id="bars">
+
+    <!-- No languages detected -->
+    <rect x="100" y="80" width="600.0" height="30" fill="#FF6B6B" rx="5"/>
+    <text x="110" y="100" class="label">No languages detected: 100.0%</text>
+  
+  </g>
+  
+  <!-- Rodapé -->
+  <text x="400" y="480" text-anchor="middle" class="legend-text" fill="#888">
+    Gerado automaticamente por GitHub Actions
+  </text>
+</svg>
