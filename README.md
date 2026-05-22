@@ -8,7 +8,7 @@
 
 ---
 
-## 🚀 LEARNING AT THE MOMENT
+##  LEARNING AT THE MOMENT
 
 <div align="center">
 
@@ -31,7 +31,7 @@
 
 ---
 
-## 🛠️ IDES & TOOLS
+##  IDES & TOOLS
 
 <div align="center">
 
@@ -43,7 +43,7 @@
 
 ---
 
-## 📊 STATUS & CONTRIBUTIONS
+##  STATUS & CONTRIBUTIONS
 
 <div align="center">
 
@@ -51,9 +51,7 @@
 
 <br/>
 
-<!-- Substitua pelo caminho correto do seu repositório se usar GitHub Actions para a Snake -->
-![snake eating my contributions](https://raw.githubusercontent.com/MrEddie7/MrEddie7/output/github-contribution-grid-snake.svg)
-
+![snake eating my contributions](https://raw.githubusercontent.com/HakkaiDP/HakkaiDP/output/github-contribution-grid-snake.svg)
 ---
 
 ![Thanks for the attention!](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=22&pause=1000&color=939ba3&center=true&width=500&lines=Thanks+for+the+attention!;I+will+update+more+later...)
