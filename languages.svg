@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="400" viewBox="0 0 500 400">
+  <defs>
+    <style>
+      .title { font-size: 24px; font-weight: bold; fill: #0d1117; }
+      .label { font-size: 12px; fill: #666; }
+      .percent { font-size: 11px; fill: #666; }
+    </style>
+  </defs>
+  <rect width="500" height="400" fill="#ffffff" stroke="#e1e4e8" stroke-width="1" rx="6"/>
+  <text x="20" y="35" class="title">📊 Top Languages</text>
+  
+  <!-- JavaScript -->
+  <text x="20" y="75" class="label">JavaScript</text>
+  <rect x="120" y="62" width="280" height="16" fill="#f7df1e" rx="2"/>
+  <text x="410" y="75" class="percent">45.2%</text>
+  
+  <!-- Python -->
+  <text x="20" y="110" class="label">Python</text>
+  <rect x="120" y="97" width="208" height="16" fill="#3776ab" rx="2"/>
+  <text x="340" y="110" class="percent">32.6%</text>
+  
+  <!-- HTML -->
+  <text x="20" y="145" class="label">HTML</text>
+  <rect x="120" y="132" width="80" height="16" fill="#f34b7d" rx="2"/>
+  <text x="210" y="145" class="percent">12.7%</text>
+  
+  <!-- CSS -->
+  <text x="20" y="180" class="label">CSS</text>
+  <rect x="120" y="167" width="52" height="16" fill="#00add8" rx="2"/>
+  <text x="182" y="180" class="percent">8.1%</text>
+  
+  <!-- TypeScript -->
+  <text x="20" y="215" class="label">TypeScript</text>
+  <rect x="120" y="202" width="9" height="16" fill="#3178c6" rx="2"/>
+  <text x="139" y="215" class="percent">1.4%</text>
+  
+  <text x="20" y="360" class="label">Total: 553.0 MB • Updated: 04/06/2026</text>
+</svg>
