@@ -1,4 +1,4 @@
-name: Gerar Gráfico de Linguagens
+name: Gerar Gráfico de Linguagens (SVG)
 
 on:
   push:
@@ -119,7 +119,7 @@ jobs:
             console.log('📈 Linguagens:', allLanguages);
             core.setOutput('languages', JSON.stringify(allLanguages));
 
-      - name: Gerar Gráfico em Markdown
+      - name: Gerar Gráfico SVG
         run: |
           node << 'EOF'
           const fs = require('fs');
@@ -133,36 +133,64 @@ jobs:
           // Calcular total
           const total = Object.values(languages).reduce((a, b) => a + b, 0);
           
-          // Gerar markdown
-          let markdown = '# 📊 Estatísticas de Linguagens\n\n';
-          markdown += `**Total de Bytes:** ${total.toLocaleString()}\n\n`;
-          markdown += '## Top 10 Linguagens\n\n';
-          markdown += '| Linguagem | Bytes | Percentual | Gráfico |\n';
-          markdown += '|-----------|-------|-----------|----------|\n';
+          if (sorted.length === 0) {
+            console.log('⚠️ Nenhuma linguagem encontrada');
+            process.exit(0);
+          }
           
-          sorted.forEach(([lang, bytes]) => {
+          // Cores para as linguagens
+          const colors = [
+            '#f7df1e', '#3776ab', '#f34b7d', '#00add8', '#ce422b',
+            '#4479a7', '#563d7c', '#92e1c0', '#f1e05a', '#3178c6'
+          ];
+          
+          // Gerar SVG com gráfico de barras
+          let svg = `<svg xmlns="http://www.w3.org/2000/svg" width="500" height="${50 + sorted.length * 35}" viewBox="0 0 500 ${50 + sorted.length * 35}">
+            <defs>
+              <style>
+                .title { font-size: 24px; font-weight: bold; fill: #0d1117; }
+                .label { font-size: 12px; fill: #666; }
+                .percent { font-size: 11px; fill: #666; }
+                .bar { transition: width 0.3s ease; }
+              </style>
+            </defs>
+            <rect width="500" height="${50 + sorted.length * 35}" fill="#ffffff" stroke="#e1e4e8" stroke-width="1" rx="6"/>
+            <text x="20" y="35" class="title">📊 Top Languages</text>
+          `;
+          
+          let yOffset = 65;
+          sorted.forEach(([lang, bytes], index) => {
             const percent = ((bytes / total) * 100).toFixed(1);
-            const barLength = Math.round(percent / 5);
-            const bar = '█'.repeat(barLength) + '░'.repeat(20 - barLength);
-            markdown += `| ${lang} | ${bytes.toLocaleString()} | ${percent}% | ${bar} |\n`;
+            const barWidth = Math.max(20, (percent / 100) * 350);
+            
+            svg += `
+              <text x="20" y="${yOffset + 5}" class="label">${lang}</text>
+              <rect x="120" y="${yOffset - 8}" width="${barWidth}" height="16" fill="${colors[index]}" rx="2"/>
+              <text x="${120 + barWidth + 5}" y="${yOffset + 5}" class="percent">${percent}%</text>
+            `;
+            yOffset += 35;
           });
           
-          fs.writeFileSync('LANGUAGES_GRAPH.md', markdown);
-          console.log('✅ Gráfico gerado com sucesso!');
+          svg += `
+            <text x="20" y="${yOffset + 15}" class="label">Total: ${(total / 1024 / 1024).toFixed(1)} MB • Updated: ${new Date().toLocaleDateString()}</text>
+          </svg>`;
+          
+          fs.writeFileSync('languages.svg', svg);
+          console.log('✅ SVG gerado com sucesso!');
           EOF
 
       - name: Commit e Push com Retry
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add LANGUAGES_GRAPH.md
+          git add languages.svg
           
           if git diff --staged --quiet; then
             echo "✅ Sem mudanças para commitar"
             exit 0
           fi
           
-          git commit -m "📊 Update language statistics"
+          git commit -m "📊 Update language statistics SVG"
           
           # Tentar push com retry automático
           for i in {1..3}; do
