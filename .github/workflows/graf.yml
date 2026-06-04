@@ -13,6 +13,7 @@ jobs:
     permissions:
       contents: write
       repositories: read
+      actions: read
     
     steps:
       - name: Checkout
@@ -61,6 +62,11 @@ jobs:
                   
                   return { success: true, repoName: repo.name, languages };
                 } catch (error) {
+                  if (error.status === 403 || error.status === 404) {
+                    console.log(`Ignorando ${repo.name}: sem acesso ou repositório vazio`);
+                  } else {
+                    console.log(`Erro em ${repo.name}: ${error.status || 'Erro'} - ${error.message}`);
+                  }
                   return { success: false, repoName: repo.name, error };
                 }
               });
@@ -72,8 +78,6 @@ jobs:
                   for (const [lang, bytes] of Object.entries(res.languages)) {
                     allLanguages[lang] = (allLanguages[lang] || 0) + bytes;
                   }
-                } else {
-                  console.log(`Ignorando ${res.repoName}: ${res.error.status || 'Erro'} - ${res.error.message}`);
                 }
               }
             }
