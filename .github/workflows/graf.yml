@@ -33,23 +33,43 @@ jobs:
             let hasMore = true;
             let allRepos = [];
 
+            // Buscar todos os repositórios com tratamento de erros
             while (hasMore) {
-              const { data: repos } = await github.rest.repos.listForAuthenticatedUser({
-                per_page: 100,
-                page: page,
-                sort: 'updated'
-              });
+              try {
+                const { data: repos } = await github.rest.repos.listForAuthenticatedUser({
+                  per_page: 100,
+                  page: page,
+                  sort: 'updated'
+                });
 
-              if (repos.length === 0) {
-                hasMore = false;
-                break;
+                if (repos.length === 0) {
+                  hasMore = false;
+                  break;
+                }
+
+                allRepos.push(...repos);
+                page++;
+              } catch (error) {
+                if (error.status === 403) {
+                  console.log('⚠️ Acesso negado ao listar repositórios. Verificando permissões do token.');
+                  hasMore = false;
+                } else if (error.status === 401) {
+                  console.error('❌ Token não autorizado. Verifique as credenciais.');
+                  throw new Error('Token não autorizado');
+                } else {
+                  console.error(`❌ Erro ao listar repositórios: ${error.status} - ${error.message}`);
+                  throw error;
+                }
               }
-
-              allRepos.push(...repos);
-              page++;
             }
 
-            console.log(`Total de repositórios encontrados: ${allRepos.length}`);
+            console.log(`✅ Total de repositórios encontrados: ${allRepos.length}`);
+
+            if (allRepos.length === 0) {
+              console.log('⚠️ Nenhum repositório encontrado. Encerrando.');
+              core.setOutput('languages', JSON.stringify({}));
+              process.exit(0);
+            }
 
             const CONCURRENCY_LIMIT = 10;
 
@@ -65,10 +85,14 @@ jobs:
 
                   return { success: true, repoName: repo.name, languages };
                 } catch (error) {
-                  if (error.status === 403 || error.status === 404) {
-                    console.log(`Ignorando ${repo.name}: sem acesso ou repositório vazio`);
+                  if (error.status === 403) {
+                    console.log(`⚠️ Ignorando ${repo.name}: sem acesso (403)`);
+                  } else if (error.status === 404) {
+                    console.log(`⚠️ Ignorando ${repo.name}: repositório vazio ou não encontrado (404)`);
+                  } else if (error.status === 401) {
+                    console.log(`⚠️ Ignorando ${repo.name}: não autorizado (401)`);
                   } else {
-                    console.log(`Erro em ${repo.name}: ${error.status || 'Erro'} - ${error.message}`);
+                    console.log(`⚠️ Erro em ${repo.name}: ${error.status || 'Erro desconhecido'} - ${error.message}`);
                   }
                   return { success: false, repoName: repo.name, error };
                 }
@@ -85,10 +109,11 @@ jobs:
                   }
                 }
               } catch (error) {
-                console.error(`Erro crítico ao processar chunk: ${error.message}`);
+                console.error(`❌ Erro crítico ao processar chunk: ${error.message}`);
                 throw error;
               }
             }
 
-            console.log('Total de linguagens:', allLanguages);
+            console.log('📊 Total de linguagens encontradas:', Object.keys(allLanguages).length);
+            console.log('📈 Linguagens:', allLanguages);
             core.setOutput('languages', JSON.stringify(allLanguages));
