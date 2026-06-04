@@ -12,21 +12,16 @@ env:
 
 jobs:
   generate-graph:
-    # ... rest of workflow
-
-jobs:
-  generate-graph:
     runs-on: ubuntu-latest
     permissions:
       contents: write
       repositories: read
       actions: read
-      
-    
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      
+
       - name: Buscar Linguagens de Todos os Repositórios
         id: languages
         uses: actions/github-script@v7
@@ -37,37 +32,37 @@ jobs:
             let page = 1;
             let hasMore = true;
             let allRepos = [];
-            
+
             while (hasMore) {
               const { data: repos } = await github.rest.repos.listForAuthenticatedUser({
                 per_page: 100,
                 page: page,
                 sort: 'updated'
               });
-              
+
               if (repos.length === 0) {
                 hasMore = false;
                 break;
               }
-              
+
               allRepos.push(...repos);
               page++;
             }
-            
+
             console.log(`Total de repositórios encontrados: ${allRepos.length}`);
-            
+
             const CONCURRENCY_LIMIT = 10;
-            
+
             for (let i = 0; i < allRepos.length; i += CONCURRENCY_LIMIT) {
               const chunk = allRepos.slice(i, i + CONCURRENCY_LIMIT);
-              
+
               const promises = chunk.map(async (repo) => {
                 try {
                   const { data: languages } = await github.rest.repos.listLanguages({
                     owner: repo.owner.login,
                     repo: repo.name,
                   });
-                  
+
                   return { success: true, repoName: repo.name, languages };
                 } catch (error) {
                   if (error.status === 403 || error.status === 404) {
@@ -78,10 +73,10 @@ jobs:
                   return { success: false, repoName: repo.name, error };
                 }
               });
-              
+
               try {
                 const results = await Promise.all(promises);
-                
+
                 for (const res of results) {
                   if (res.success) {
                     for (const [lang, bytes] of Object.entries(res.languages)) {
@@ -91,9 +86,9 @@ jobs:
                 }
               } catch (error) {
                 console.error(`Erro crítico ao processar chunk: ${error.message}`);
-                throw error; // Re-throw para parar o workflow
+                throw error;
               }
             }
-            
+
             console.log('Total de linguagens:', allLanguages);
             core.setOutput('languages', JSON.stringify(allLanguages));
