@@ -119,16 +119,14 @@ jobs:
             console.log('📈 Linguagens:', allLanguages);
             core.setOutput('languages', JSON.stringify(allLanguages));
 
-      - name: Gerar Gráfico SVG
+      - name: Gerar Gráfico SVG com Todos os Idiomas
         run: |
           node << 'EOF'
           const fs = require('fs');
           const languages = JSON.parse('${{ steps.languages.outputs.languages }}');
           
           // Ordenar linguagens por bytes (decrescente)
-          const sorted = Object.entries(languages)
-            .sort((a, b) => b[1] - a[1])
-            .slice(0, 10); // Top 10
+          const sorted = Object.entries(languages).sort((a, b) => b[1] - a[1]);
           
           // Calcular total
           const total = Object.values(languages).reduce((a, b) => a + b, 0);
@@ -138,45 +136,64 @@ jobs:
             process.exit(0);
           }
           
-          // Cores para as linguagens
+          // Paleta de cores maior
           const colors = [
             '#f7df1e', '#3776ab', '#f34b7d', '#00add8', '#ce422b',
-            '#4479a7', '#563d7c', '#92e1c0', '#f1e05a', '#3178c6'
+            '#4479a7', '#563d7c', '#92e1c0', '#f1e05a', '#3178c6',
+            '#cc342d', '#00574b', '#ff6b6b', '#4ecdc4', '#ffe66d',
+            '#95e1d3', '#c7a3e3', '#a8dadc', '#f1faee', '#e63946'
           ];
           
-          // Gerar SVG com gráfico de barras
-          let svg = `<svg xmlns="http://www.w3.org/2000/svg" width="500" height="${50 + sorted.length * 35}" viewBox="0 0 500 ${50 + sorted.length * 35}">
+          // Gerar SVG com gráfico de barras horizontais + legendas
+          const chartHeight = Math.max(400, sorted.length * 28 + 120);
+          let svg = `<svg xmlns="http://www.w3.org/2000/svg" width="800" height="${chartHeight}" viewBox="0 0 800 ${chartHeight}">
             <defs>
               <style>
-                .title { font-size: 24px; font-weight: bold; fill: #0d1117; }
-                .label { font-size: 12px; fill: #666; }
-                .percent { font-size: 11px; fill: #666; }
-                .bar { transition: width 0.3s ease; }
+                .title { font-size: 28px; font-weight: bold; fill: #0d1117; }
+                .subtitle { font-size: 12px; fill: #666; }
+                .label { font-size: 13px; fill: #0d1117; font-weight: 500; }
+                .percent { font-size: 12px; fill: #666; }
+                .total { font-size: 11px; fill: #999; }
               </style>
             </defs>
-            <rect width="500" height="${50 + sorted.length * 35}" fill="#ffffff" stroke="#e1e4e8" stroke-width="1" rx="6"/>
-            <text x="20" y="35" class="title">📊 Top Languages</text>
+            <rect width="800" height="${chartHeight}" fill="#ffffff" stroke="#e1e4e8" stroke-width="1" rx="8"/>
+            
+            <!-- Header -->
+            <text x="20" y="35" class="title">📊 Meus Idiomas de Programação</text>
+            <text x="20" y="55" class="subtitle">Análise de todos os repositórios</text>
           `;
           
-          let yOffset = 65;
-          sorted.forEach(([lang, bytes], index) => {
+          let yOffset = 85;
+          let colorIndex = 0;
+          
+          sorted.forEach(([lang, bytes]) => {
             const percent = ((bytes / total) * 100).toFixed(1);
-            const barWidth = Math.max(20, (percent / 100) * 350);
+            const barWidth = Math.max(30, (percent / 100) * 600);
+            const color = colors[colorIndex % colors.length];
             
             svg += `
-              <text x="20" y="${yOffset + 5}" class="label">${lang}</text>
-              <rect x="120" y="${yOffset - 8}" width="${barWidth}" height="16" fill="${colors[index]}" rx="2"/>
-              <text x="${120 + barWidth + 5}" y="${yOffset + 5}" class="percent">${percent}%</text>
+              <!-- ${lang} -->
+              <text x="20" y="${yOffset + 12}" class="label">${lang}</text>
+              <rect x="150" y="${yOffset}" width="${barWidth}" height="20" fill="${color}" rx="3"/>
+              <text x="${Math.min(150 + barWidth + 5, 770)}" y="${yOffset + 14}" class="percent">${percent}%</text>
             `;
-            yOffset += 35;
+            
+            yOffset += 28;
+            colorIndex++;
           });
           
+          // Footer
+          const mbTotal = (total / 1024 / 1024).toFixed(1);
+          const kbTotal = (total / 1024).toFixed(0);
           svg += `
-            <text x="20" y="${yOffset + 15}" class="label">Total: ${(total / 1024 / 1024).toFixed(1)} MB • Updated: ${new Date().toLocaleDateString()}</text>
+            <line x1="20" y1="${yOffset}" x2="780" y2="${yOffset}" stroke="#e1e4e8" stroke-width="1"/>
+            <text x="20" y="${yOffset + 25}" class="total">📈 Total: ${mbTotal} MB (${kbTotal} KB) | 🗂️ Idiomas: ${sorted.length} | ⏱️ Atualizado: ${new Date().toLocaleDateString('pt-BR')}</text>
           </svg>`;
           
           fs.writeFileSync('languages.svg', svg);
           console.log('✅ SVG gerado com sucesso!');
+          console.log(\`📊 Total de linguagens: \${sorted.length}\`);
+          console.log(\`📦 Total de bytes: \${total}\`);
           EOF
 
       - name: Commit e Push com Retry
