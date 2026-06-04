@@ -116,3 +116,42 @@ jobs:
             console.log('📊 Total de linguagens encontradas:', Object.keys(allLanguages).length);
             console.log('📈 Linguagens:', allLanguages);
             core.setOutput('languages', JSON.stringify(allLanguages));
+
+      - name: Gerar Gráfico em Markdown
+        run: |
+          node << 'EOF'
+          const fs = require('fs');
+          const languages = JSON.parse('${{ steps.languages.outputs.languages }}');
+          
+          // Ordenar linguagens por bytes (decrescente)
+          const sorted = Object.entries(languages)
+            .sort((a, b) => b[1] - a[1])
+            .slice(0, 10); // Top 10
+          
+          // Calcular total
+          const total = Object.values(languages).reduce((a, b) => a + b, 0);
+          
+          // Gerar markdown
+          let markdown = '# 📊 Estatísticas de Linguagens\n\n';
+          markdown += `**Total de Bytes:** ${total.toLocaleString()}\n\n`;
+          markdown += '## Top 10 Linguagens\n\n';
+          markdown += '| Linguagem | Bytes | Percentual | Gráfico |\n';
+          markdown += '|-----------|-------|-----------|----------|\n';
+          
+          sorted.forEach(([lang, bytes]) => {
+            const percent = ((bytes / total) * 100).toFixed(1);
+            const barLength = Math.round(percent / 5);
+            const bar = '█'.repeat(barLength) + '░'.repeat(20 - barLength);
+            markdown += `| ${lang} | ${bytes.toLocaleString()} | ${percent}% | ${bar} |\n`;
+          });
+          
+          fs.writeFileSync('LANGUAGES_GRAPH.md', markdown);
+          console.log('✅ Gráfico gerado com sucesso!');
+          EOF
+
+      - name: Commit e Push
+        run: |
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add LANGUAGES_GRAPH.md
+          git diff --quiet && git diff --staged --quiet || (git commit -m "📊 Update language statistics" && git push)
