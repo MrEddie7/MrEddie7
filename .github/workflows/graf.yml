@@ -71,14 +71,19 @@ jobs:
                 }
               });
               
-              const results = await Promise.all(promises);
-              
-              for (const res of results) {
-                if (res.success) {
-                  for (const [lang, bytes] of Object.entries(res.languages)) {
-                    allLanguages[lang] = (allLanguages[lang] || 0) + bytes;
+              try {
+                const results = await Promise.all(promises);
+                
+                for (const res of results) {
+                  if (res.success) {
+                    for (const [lang, bytes] of Object.entries(res.languages)) {
+                      allLanguages[lang] = (allLanguages[lang] || 0) + bytes;
+                    }
                   }
                 }
+              } catch (error) {
+                console.error(`Erro crítico ao processar chunk: ${error.message}`);
+                throw error; // Re-throw para parar o workflow
               }
             }
             
