@@ -20,6 +20,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Buscar Linguagens de Todos os Repositórios
         id: languages
@@ -149,15 +151,31 @@ jobs:
           console.log('✅ Gráfico gerado com sucesso!');
           EOF
 
-      - name: Commit e Push
+      - name: Commit e Push com Retry
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add LANGUAGES_GRAPH.md
+          
           if git diff --staged --quiet; then
             echo "✅ Sem mudanças para commitar"
-          else
-            git commit -m "📊 Update language statistics"
-            git pull --rebase origin main
-            git push origin main
+            exit 0
           fi
+          
+          git commit -m "📊 Update language statistics"
+          
+          # Tentar push com retry automático
+          for i in {1..3}; do
+            echo "🔄 Tentativa $i de 3..."
+            if git pull --rebase origin main && git push origin main; then
+              echo "✅ Push realizado com sucesso!"
+              exit 0
+            fi
+            if [ $i -lt 3 ]; then
+              echo "⏳ Aguardando antes de retentar..."
+              sleep 2
+            fi
+          done
+          
+          echo "❌ Falha após 3 tentativas"
+          exit 1
