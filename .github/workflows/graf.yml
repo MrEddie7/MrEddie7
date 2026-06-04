@@ -1,65 +1,65 @@
-name: Gerar Gráfico de Linguagens
-
-on:
-  push:
-    branches: [main]
-  workflow_dispatch:
-  schedule:
-    - cron: '0 0 * * 0'
-
-jobs:
-  generate-graph:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      repositories: read
-    
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+- name: Buscar Linguagens de Todos os Repositórios
+  id: languages
+  uses: actions/github-script@v7
+  with:
+    script: |
+      const allLanguages = {};
+      let page = 1;
+      let allRepos = [];
+      let hasMore = true;
       
-      - name: Buscar Linguagens de Todos os Repositórios
-        id: languages
-        uses: actions/github-script@v7
-        with:
-          script: |
-            const allLanguages = {};
-            let page = 1;
-            let hasMore = true;
+      // 1. Busca a lista de todos os repositórios primeiro (Paginação acelerada)
+      console.log('Buscando lista de repositórios...');
+      while (hasMore) {
+        const { data: repos } = await github.rest.repos.listForAuthenticatedUser({
+          per_page: 100,
+          page: page,
+          sort: 'updated'
+        });
+        
+        if (repos.length === 0) {
+          hasMore = false;
+          break;
+        }
+        
+        allRepos.push(...repos);
+        page++;
+      }
+      
+      console.log(`Total de repositórios encontrados: ${allRepos.length}`);
+      
+      // 2. Processa as linguagens em lotes paralelos (Garante velocidade)
+      const CONCURRENCY_LIMIT = 10; // Executa de 10 em 10 para evitar Rate Limit
+      
+      for (let i = 0; i < allRepos.length; i += CONCURRENCY_LIMIT) {
+        const chunk = allRepos.slice(i, i + CONCURRENCY_LIMIT);
+        
+        const promises = chunk.map(async (repo) => {
+          try {
+            const { data: languages } = await github.rest.repos.listLanguages({
+              owner: repo.owner.login,
+              repo: repo.name,
+            });
             
-            while (hasMore) {
-              const { data: repos } = await github.rest.repos.listForAuthenticatedUser({
-                per_page: 100,
-                page: page,
-                sort: 'updated'
-              });
-              
-              if (repos.length === 0) {
-                hasMore = false;
-                break;
-              }
-              
-              for (const repo of repos) {
-                try {
-                  const { data: languages } = await github.rest.repos.listLanguages({
-                    owner: repo.owner.login,
-                    repo: repo.name,
-                  });
-                  
-                  console.log(`${repo.name}:`, languages);
-                  
-                  for (const [lang, bytes] of Object.entries(languages)) {
-                    allLanguages[lang] = (allLanguages[lang] || 0) + bytes;
-                  }
-                } catch (error) {
-                  console.log(`Erro ao buscar linguagens de ${repo.name}:`, error);
-                }
-              }
-              
-              page++;
+            return { success: true, repoName: repo.name, languages };
+          } catch (error) {
+            return { success: false, repoName: repo.name, error };
+          }
+        });
+        
+        const results = await Promise.all(promises);
+        
+        // 3. Consolida os resultados do lote atual
+        for (const res of results) {
+          if (res.success) {
+            for (const [lang, bytes] of Object.entries(res.languages)) {
+              allLanguages[lang] = (allLanguages[lang] || 0) + bytes;
             }
-            
-            console.log('Total de linguagens:', allLanguages);
-            core.setOutput('languages', JSON.stringify(allLanguages));
+          } else {
+            console.log(`Ignorando ${res.repoName}: ${res.error.status || 'Erro'} - ${res.error.message}`);
+          }
+        }
+      }
       
-      # ... rest remains the same
+      console.log('Total de linguagens:', allLanguages);
+      core.setOutput('languages', JSON.stringify(allLanguages));
