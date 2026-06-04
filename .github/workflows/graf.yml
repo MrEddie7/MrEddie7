@@ -7,6 +7,10 @@ on:
   schedule:
     - cron: '0 0 * * 0'  # Executa toda semana
 
+permissions:
+  contents: write
+  repositories: read
+
 jobs:
   generate-graph:
     runs-on: ubuntu-latest
@@ -49,7 +53,7 @@ jobs:
                     allLanguages[lang] = (allLanguages[lang] || 0) + bytes;
                   }
                 } catch (error) {
-                  console.log(`Erro ao buscar linguagens de ${repo.name}:`, error);
+                  console.log(`Erro ao buscar linguagens de ${repo.name}:`, error.message);
                 }
               }
               
