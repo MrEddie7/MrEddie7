@@ -1,161 +1,44 @@
-name: Gerar Gráfico de Linguagens
-
-on:
-  push:
-    branches: [main]
-  workflow_dispatch:
-  schedule:
-    - cron: '0 0 * * 0'  # Executa toda semana
-
-permissions:
-  contents: write
-  repositories: read
-
-jobs:
-  generate-graph:
-    runs-on: ubuntu-latest
-    
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+- name: Buscar Linguagens de Todos os Repositórios
+  id: languages
+  uses: actions/github-script@v7
+  with:
+    github-token: ${{ secrets.GITHUB_TOKEN }}
+    script: |
+      const allLanguages = {};
+      let page = 1;
+      let hasMore = true;
       
-      - name: Buscar Linguagens de Todos os Repositórios
-        id: languages
-        uses: actions/github-script@v7
-        with:
-          script: |
-            const allLanguages = {};
-            let page = 1;
-            let hasMore = true;
+      while (hasMore) {
+        const { data: repos } = await github.rest.repos.listForAuthenticatedUser({
+          per_page: 100,
+          page: page,
+          sort: 'updated'
+        });
+        
+        if (repos.length === 0) {
+          hasMore = false;
+          break;
+        }
+        
+        for (const repo of repos) {
+          try {
+            const { data: languages } = await github.rest.repos.listLanguages({
+              owner: repo.owner.login,
+              repo: repo.name,
+            });
             
-            while (hasMore) {
-              const { data: repos } = await github.rest.repos.listForAuthenticatedUser({
-                per_page: 100,
-                page: page,
-                sort: 'updated'
-              });
-              
-              if (repos.length === 0) {
-                hasMore = false;
-                break;
-              }
-              
-              for (const repo of repos) {
-                try {
-                  const { data: languages } = await github.rest.repos.listLanguages({
-                    owner: repo.owner.login,
-                    repo: repo.name,
-                  });
-                  
-                  console.log(`${repo.name}:`, languages);
-                  
-                  for (const [lang, bytes] of Object.entries(languages)) {
-                    allLanguages[lang] = (allLanguages[lang] || 0) + bytes;
-                  }
-                } catch (error) {
-                  console.log(`Erro ao buscar linguagens de ${repo.name}:`, error.message);
-                }
-              }
-              
-              page++;
+            console.log(`${repo.name}:`, languages);
+            
+            for (const [lang, bytes] of Object.entries(languages)) {
+              allLanguages[lang] = (allLanguages[lang] || 0) + bytes;
             }
-            
-            console.log('Total de linguagens:', allLanguages);
-            core.setOutput('languages', JSON.stringify(allLanguages));
+          } catch (error) {
+            console.log(`Erro ao buscar linguagens de ${repo.name}: ${error.message} (Status: ${error.status})`);
+          }
+        }
+        
+        page++;
+      }
       
-      - name: Gerar Gráfico em SVG
-        id: generate
-        run: |
-          python3 << 'EOF'
-          import json
-          import math
-          
-          languages_data = json.loads('${{ steps.languages.outputs.languages }}')
-          
-          if not languages_data:
-            languages_data = {"No languages detected": 100}
-          
-          total = sum(languages_data.values())
-          
-          # Cores para cada linguagem
-          colors = [
-            "#FF6B6B", "#4ECDC4", "#45B7D1", "#FFA07A", "#98D8C8",
-            "#F7DC6F", "#BB8FCE", "#85C1E2", "#F8B88B", "#A8D5BA",
-            "#FFB6C1", "#20B2AA", "#87CEEB", "#DDA0DD", "#F0E68C",
-            "#B0C4DE", "#FFD700", "#FF4500", "#32CD32", "#DC143C"
-          ]
-          
-          # Ordenar linguagens por bytes (descending)
-          sorted_languages = sorted(languages_data.items(), key=lambda x: x[1], reverse=True)
-          
-          # Calcular número de linhas necessárias
-          num_languages = len(sorted_languages)
-          bar_height = 30
-          bar_spacing = 10
-          margin_top = 80
-          margin_bottom = 60
-          padding = 20
-          
-          graph_height = margin_top + (num_languages * (bar_height + bar_spacing)) + margin_bottom
-          
-          svg = f'''<svg width="900" height="{graph_height}" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <style>
-                .title {{ font-size: 28px; font-weight: bold; }}
-                .label {{ font-size: 13px; fill: white; font-weight: bold; }}
-                .percent {{ font-size: 11px; fill: white; }}
-                .legend-text {{ font-size: 11px; }}
-              </style>
-            </defs>
-            
-            <!-- Background -->
-            <rect width="900" height="{graph_height}" fill="#1e1e1e"/>
-            
-            <!-- Título -->
-            <text x="450" y="40" text-anchor="middle" class="title" fill="white">
-              Linguagens de Todos os Repositórios
-            </text>
-            
-            <!-- Gráfico de Barras -->
-            <g id="bars">
-          '''
-          
-          y_pos = margin_top
-          
-          for idx, (lang, bytes_count) in enumerate(sorted_languages):
-            percentage = (bytes_count / total) * 100
-            bar_width = (percentage / 100) * 700
-            color = colors[idx % len(colors)]
-            
-            svg += f'''
-              <!-- {lang} -->
-              <rect x="120" y="{y_pos}" width="{bar_width}" height="{bar_height}" fill="{color}" rx="5"/>
-              <text x="130" y="{y_pos + 20}" class="label">{lang}: {percentage:.1f}%</text>
-            '''
-            
-            y_pos += bar_height + bar_spacing
-          
-          svg += f'''
-            </g>
-            
-            <!-- Rodapé -->
-            <text x="450" y="{graph_height - 15}" text-anchor="middle" class="legend-text" fill="#888">
-              Total: {num_languages} linguagens | Gerado automaticamente por GitHub Actions
-            </text>
-          </svg>
-          '''
-          
-          # Salvar o SVG
-          with open('languages-graph.svg', 'w') as f:
-            f.write(svg)
-          
-          print("SVG gerado com sucesso!")
-          EOF
-      
-      - name: Commit e Push
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add languages-graph.svg
-          git commit -m "Atualizar gráfico de linguagens" || echo "Nenhuma mudança para commitar"
-          git push
+      console.log('Total de linguagens:', allLanguages);
+      core.setOutput('languages', JSON.stringify(allLanguages));
