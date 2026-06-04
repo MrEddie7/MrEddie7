@@ -1,18 +1,11 @@
-- name: Buscar Linguagens de Todos os Repositórios
-  id: languages
-  uses: actions/github-script@v7
-  with:
-    script: |
-      const allLanguages = {};
-      let page = 1;
-      let allRepos = [];name: Gerar Gráfico de Linguagens
+name: Gerar Gráfico de Linguagens
 
 on:
   push:
     branches: [main]
   workflow_dispatch:
   schedule:
-    - cron: '0 0 * * 0'  # Executa toda semana
+    - cron: '0 0 * * 0'
 
 jobs:
   generate-graph:
@@ -34,6 +27,7 @@ jobs:
             const allLanguages = {};
             let page = 1;
             let hasMore = true;
+            let allRepos = [];
             
             while (hasMore) {
               const { data: repos } = await github.rest.repos.listForAuthenticatedUser({
@@ -47,72 +41,42 @@ jobs:
                 break;
               }
               
-              for (const repo of repos) {
+              allRepos.push(...repos);
+              page++;
+            }
+            
+            console.log(`Total de repositórios encontrados: ${allRepos.length}`);
+            
+            const CONCURRENCY_LIMIT = 10;
+            
+            for (let i = 0; i < allRepos.length; i += CONCURRENCY_LIMIT) {
+              const chunk = allRepos.slice(i, i + CONCURRENCY_LIMIT);
+              
+              const promises = chunk.map(async (repo) => {
                 try {
                   const { data: languages } = await github.rest.repos.listLanguages({
                     owner: repo.owner.login,
                     repo: repo.name,
                   });
                   
-                  console.log(`${repo.name}:`, languages);
-                  
-                  for (const [lang, bytes] of Object.entries(languages)) {
-                    allLanguages[lang] = (allLanguages[*
-
-      let hasMore = true;
-      
-      // 1. Busca a lista de todos os repositórios primeiro (Paginação acelerada)
-      console.log('Buscando lista de repositórios...');
-      while (hasMore) {
-        const { data: repos } = await github.rest.repos.listForAuthenticatedUser({
-          per_page: 100,
-          page: page,
-          sort: 'updated'
-        });
-        
-        if (repos.length === 0) {
-          hasMore = false;
-          break;
-        }
-        
-        allRepos.push(...repos);
-        page++;
-      }
-      
-      console.log(`Total de repositórios encontrados: ${allRepos.length}`);
-      
-      // 2. Processa as linguagens em lotes paralelos (Garante velocidade)
-      const CONCURRENCY_LIMIT = 10; // Executa de 10 em 10 para evitar Rate Limit
-      
-      for (let i = 0; i < allRepos.length; i += CONCURRENCY_LIMIT) {
-        const chunk = allRepos.slice(i, i + CONCURRENCY_LIMIT);
-        
-        const promises = chunk.map(async (repo) => {
-          try {
-            const { data: languages } = await github.rest.repos.listLanguages({
-              owner: repo.owner.login,
-              repo: repo.name,
-            });
-            
-            return { success: true, repoName: repo.name, languages };
-          } catch (error) {
-            return { success: false, repoName: repo.name, error };
-          }
-        });
-        
-        const results = await Promise.all(promises);
-        
-        // 3. Consolida os resultados do lote atual
-        for (const res of results) {
-          if (res.success) {
-            for (const [lang, bytes] of Object.entries(res.languages)) {
-              allLanguages[lang] = (allLanguages[lang] || 0) + bytes;
+                  return { success: true, repoName: repo.name, languages };
+                } catch (error) {
+                  return { success: false, repoName: repo.name, error };
+                }
+              });
+              
+              const results = await Promise.all(promises);
+              
+              for (const res of results) {
+                if (res.success) {
+                  for (const [lang, bytes] of Object.entries(res.languages)) {
+                    allLanguages[lang] = (allLanguages[lang] || 0) + bytes;
+                  }
+                } else {
+                  console.log(`Ignorando ${res.repoName}: ${res.error.status || 'Erro'} - ${res.error.message}`);
+                }
+              }
             }
-          } else {
-            console.log(`Ignorando ${res.repoName}: ${res.error.status || 'Erro'} - ${res.error.message}`);
-          }
-        }
-      }
-      
-      console.log('Total de linguagens:', allLanguages);
-      core.setOutput('languages', JSON.stringify(allLanguages));
+            
+            console.log('Total de linguagens:', allLanguages);
+            core.setOutput('languages', JSON.stringify(allLanguages));
