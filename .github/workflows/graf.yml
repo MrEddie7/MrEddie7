@@ -154,4 +154,10 @@ jobs:
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add LANGUAGES_GRAPH.md
-          git diff --quiet && git diff --staged --quiet || (git commit -m "📊 Update language statistics" && git push)
+          if ! git diff --quiet && git diff --staged --quiet; then
+            git commit -m "📊 Update language statistics"
+            git pull --rebase origin main
+            git push origin main
+          else
+            echo "✅ Sem mudanças para commitar"
+          fi
