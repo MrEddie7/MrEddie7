@@ -1,44 +1,65 @@
-- name: Buscar Linguagens de Todos os Repositórios
-  id: languages
-  uses: actions/github-script@v7
-  with:
-    github-token: ${{ secrets.GITHUB_TOKEN }}
-    script: |
-      const allLanguages = {};
-      let page = 1;
-      let hasMore = true;
+name: Gerar Gráfico de Linguagens
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * 0'
+
+jobs:
+  generate-graph:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      repositories: read
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
       
-      while (hasMore) {
-        const { data: repos } = await github.rest.repos.listForAuthenticatedUser({
-          per_page: 100,
-          page: page,
-          sort: 'updated'
-        });
-        
-        if (repos.length === 0) {
-          hasMore = false;
-          break;
-        }
-        
-        for (const repo of repos) {
-          try {
-            const { data: languages } = await github.rest.repos.listLanguages({
-              owner: repo.owner.login,
-              repo: repo.name,
-            });
+      - name: Buscar Linguagens de Todos os Repositórios
+        id: languages
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const allLanguages = {};
+            let page = 1;
+            let hasMore = true;
             
-            console.log(`${repo.name}:`, languages);
-            
-            for (const [lang, bytes] of Object.entries(languages)) {
-              allLanguages[lang] = (allLanguages[lang] || 0) + bytes;
+            while (hasMore) {
+              const { data: repos } = await github.rest.repos.listForAuthenticatedUser({
+                per_page: 100,
+                page: page,
+                sort: 'updated'
+              });
+              
+              if (repos.length === 0) {
+                hasMore = false;
+                break;
+              }
+              
+              for (const repo of repos) {
+                try {
+                  const { data: languages } = await github.rest.repos.listLanguages({
+                    owner: repo.owner.login,
+                    repo: repo.name,
+                  });
+                  
+                  console.log(`${repo.name}:`, languages);
+                  
+                  for (const [lang, bytes] of Object.entries(languages)) {
+                    allLanguages[lang] = (allLanguages[lang] || 0) + bytes;
+                  }
+                } catch (error) {
+                  console.log(`Erro ao buscar linguagens de ${repo.name}:`, error);
+                }
+              }
+              
+              page++;
             }
-          } catch (error) {
-            console.log(`Erro ao buscar linguagens de ${repo.name}: ${error.message} (Status: ${error.status})`);
-          }
-        }
-        
-        page++;
-      }
+            
+            console.log('Total de linguagens:', allLanguages);
+            core.setOutput('languages', JSON.stringify(allLanguages));
       
-      console.log('Total de linguagens:', allLanguages);
-      core.setOutput('languages', JSON.stringify(allLanguages));
+      # ... rest remains the same
